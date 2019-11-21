@@ -122,13 +122,13 @@ class QuoteViewController: UIViewController {
         // create the 3 buttons
         if #available(iOS 13.0, *) {
             // use sf symbols
-            browseButton = createButton(with: UIImage(systemName: "list.dash")!)
-            favouriteButton = createButton(with: UIImage(systemName: "heart")!)
-            shuffleButton = createButton(with: UIImage(systemName: "shuffle")!)
+            browseButton = createButton(with: "list.dash")
+            favouriteButton = createButton(with: "heart")
+            shuffleButton = createButton(with: "shuffle")
         } else {
-            browseButton = createButton(with: #imageLiteral(resourceName: "browse"))
-            favouriteButton = createButton(with: #imageLiteral(resourceName: "happyHeart"))
-            shuffleButton = createButton(with: #imageLiteral(resourceName: "shuffle"))
+            browseButton = createButton(with: "browse")
+            favouriteButton = createButton(with: "happyHeart")
+            shuffleButton = createButton(with: "shuffle")
         }
 
         shuffleButton.addTarget(self, action: #selector(self.random(_:)), for: UIControl.Event.touchUpInside)
@@ -158,12 +158,19 @@ class QuoteViewController: UIViewController {
 
     }
 
-    func createButton(with: UIImage) -> UIButton {
-
+    func createButton(with: String) -> UIButton {
+        
+        var image = UIImage(named: with)
+        
+        if #available(iOS 13.0, *) {
+            let symbolConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .medium, scale: .medium)
+            image = UIImage(systemName: with, withConfiguration: symbolConfig)!
+        }
+        
         let button = UIButton()
         button.bounds.size.height = 40
         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        button.setImage(with.withRenderingMode(.alwaysTemplate), for: [])
+        button.setImage(image!.withRenderingMode(.alwaysTemplate), for: [])
         button.imageView?.contentMode = .scaleAspectFit
         button.imageView?.tintColor = UIColor.systemBlue
         button.tintColor = UIColor.systemBlue
@@ -174,7 +181,8 @@ class QuoteViewController: UIViewController {
     @objc func random(_ sender: UIButton) {
 
         if #available(iOS 13.0, *) {
-            let arrow = UIImage(systemName: "arrow.right")!
+            let symbolConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .medium, scale: .medium)
+            let arrow = UIImage(systemName: "arrow.right", withConfiguration: symbolConfig)!
             shuffleButton.setImage(arrow.withRenderingMode(.alwaysTemplate), for: [])
         } else {
             shuffleButton.setImage(#imageLiteral(resourceName: "next").withRenderingMode(.alwaysTemplate), for: [])
