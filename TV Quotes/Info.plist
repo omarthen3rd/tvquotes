@@ -43,6 +43,8 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>NewYorkSmall-Bold.otf</string>
+		<string>NewYorkSmall-Regular.otf</string>
 		<string>NotoSerif-Bold.ttf</string>
 		<string>NotoSerif-Regular.ttf</string>
 	</array>

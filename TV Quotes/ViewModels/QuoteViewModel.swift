@@ -50,7 +50,6 @@ public final class QuoteViewModel {
     func getNames() {
 
         guard let storedNames = userDefaults.object(forKey: self.propertyKeys.names) as? [String] else { return }
-        print("storedNames: \(storedNames)")
         self.names = storedNames
     }
 
@@ -83,7 +82,7 @@ public final class QuoteViewModel {
         let currentFontSize = getFontSize()
 
         let attrString = NSMutableAttributedString(string: quote.quote)
-        attrString.setSizeForText(quote.quote, with: UIFont(name: "NotoSerif", size: currentFontSize)!)
+        attrString.setSizeForText(quote.quote, with: UIFont(name: "NewYorkSmall-Regular", size: currentFontSize)!)
 
         for name in names {
 

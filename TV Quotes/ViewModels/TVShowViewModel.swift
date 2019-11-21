@@ -21,7 +21,7 @@ public final class TVShowViewModel {
     var userDefaults = UserDefaults.standard
     var currentVersion: Double?
     let propertyKeys = PropertyKeys()
-
+    
     init() {
         loadEverything()
     }
@@ -34,6 +34,7 @@ public final class TVShowViewModel {
         
         if isConnected {
             getRemoteQuotes()
+            getRemoteNames()
         } else {
             if currentVersion == nil {
                 // first launch with no internet
@@ -52,6 +53,27 @@ public final class TVShowViewModel {
                 getLocallyStoredQuotes()
             }
         }
+        
+    }
+    
+    private func getRemoteNames() {
+        
+        let urlPath = "https://tvquotes99.firebaseio.com/names/.json"
+        guard let url = URL(string: urlPath) else { return }
+        fetchData(with: url) { (data, _, _) in
+
+            guard let data = data else { return }
+            do {
+
+                let names = try JSONDecoder().decode([String].self, from: data)
+                self.userDefaults.set(names, forKey: self.propertyKeys.names)
+                
+            } catch {
+                print("caught remote error")
+            }
+
+        }
+
         
     }
 

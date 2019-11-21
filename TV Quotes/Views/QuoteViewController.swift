@@ -15,7 +15,7 @@ extension NSMutableAttributedString {
     func boldTextIn(_ range: NSRange, size: CGFloat) {
 
         if range.location != NSNotFound {
-            let attrs = [NSAttributedString.Key.font: UIFont(name: "NotoSerif-Bold", size: size)]
+            let attrs = [NSAttributedString.Key.font: UIFont(name: "NewYorkSmall-Bold", size: size)]
             addAttributes(attrs as [NSAttributedString.Key: Any], range: range)
         }
 
@@ -40,7 +40,9 @@ extension UITextView {
         let size = sizeThatFits(fittingSize)
         let topOffset = (bounds.size.height - size.height * zoomScale) / 2
         let positiveTopOffset = max(1, topOffset)
-        contentOffset.y = -positiveTopOffset
+        contentInset.top = positiveTopOffset
+        contentInset.left = 20
+        contentInset.right = 20
 
     }
 
@@ -89,9 +91,9 @@ class QuoteViewController: UIViewController {
     }
 
     func createUI() {
-
+        
         if #available(iOS 13.0, *) {
-            self.view.backgroundColor = UIColor.systemBackground
+            self.view.backgroundColor = UIColor.secondarySystemBackground
         } else {
             self.view.backgroundColor = UIColor.white
         }
@@ -118,9 +120,16 @@ class QuoteViewController: UIViewController {
         quoterLabel.textAlignment = .center
 
         // create the 3 buttons
-        browseButton = createButton(with: #imageLiteral(resourceName: "browse"))
-        favouriteButton = createButton(with: #imageLiteral(resourceName: "happyHeart"))
-        shuffleButton = createButton(with: #imageLiteral(resourceName: "shuffle"))
+        if #available(iOS 13.0, *) {
+            // use sf symbols
+            browseButton = createButton(with: UIImage(systemName: "list.dash")!)
+            favouriteButton = createButton(with: UIImage(systemName: "heart")!)
+            shuffleButton = createButton(with: UIImage(systemName: "shuffle")!)
+        } else {
+            browseButton = createButton(with: #imageLiteral(resourceName: "browse"))
+            favouriteButton = createButton(with: #imageLiteral(resourceName: "happyHeart"))
+            shuffleButton = createButton(with: #imageLiteral(resourceName: "shuffle"))
+        }
 
         shuffleButton.addTarget(self, action: #selector(self.random(_:)), for: UIControl.Event.touchUpInside)
 
@@ -164,7 +173,12 @@ class QuoteViewController: UIViewController {
 
     @objc func random(_ sender: UIButton) {
 
-        shuffleButton.setImage(#imageLiteral(resourceName: "next").withRenderingMode(.alwaysTemplate), for: [])
+        if #available(iOS 13.0, *) {
+            let arrow = UIImage(systemName: "arrow.right")!
+            shuffleButton.setImage(arrow.withRenderingMode(.alwaysTemplate), for: [])
+        } else {
+            shuffleButton.setImage(#imageLiteral(resourceName: "next").withRenderingMode(.alwaysTemplate), for: [])
+        }
         self.quoteTextView.attributedText = self.viewModel.getQuoteString(true)
         if #available(iOS 13.0, *) {
             quoteTextView.textColor = UIColor.label

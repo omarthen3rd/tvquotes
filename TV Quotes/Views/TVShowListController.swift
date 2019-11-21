@@ -103,6 +103,20 @@ class TVShowListController: UICollectionViewController, RefreshDelegate, UIViewC
     
     // MARK: - Previewing Delegate
     
+    @available(iOS 13.0, *)
+    override func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: { () -> UIViewController? in
+            
+            let listViewModel = self.viewModel.quoteListViewModelForTVShowAtIndexPath(indexPath)
+            let quoteList = QuoteListController(viewModel: listViewModel)
+            
+            return quoteList
+            
+        }, actionProvider: nil)
+        
+    }
+    
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         
         guard let index = collectionView.indexPathForItem(at: location), let cell = collectionView.cellForItem(at: index) as? TVShowCell else { return nil }

@@ -24,6 +24,8 @@
 		5660F664212FB4BD006793DC /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5660F662212FB4BD006793DC /* NotoSerif-Regular.ttf */; };
 		5687CEAF238714F600BFE1FD /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5687CEAC238714EF00BFE1FD /* SDWebImage.framework */; };
 		5687CEB0238714F600BFE1FD /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5687CEAC238714EF00BFE1FD /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5687CEB42387216300BFE1FD /* NewYorkSmall-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5687CEB22387216300BFE1FD /* NewYorkSmall-Regular.otf */; };
+		5687CEB52387216300BFE1FD /* NewYorkSmall-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5687CEB32387216300BFE1FD /* NewYorkSmall-Bold.otf */; };
 		56888A00210A2A9700F8BF04 /* QuoteTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568889FF210A2A9700F8BF04 /* QuoteTableCell.xib */; };
 		568AC011210773950026B451 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568AC010210773940026B451 /* SwiftyJSON.swift */; };
 		56C9C5F62132EA980017295F /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C9C5F52132EA980017295F /* VisualEffectView.swift */; };
@@ -106,6 +108,8 @@
 		5660F661212FB4BD006793DC /* NotoSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Bold.ttf"; sourceTree = "<group>"; };
 		5660F662212FB4BD006793DC /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
 		5687CEA2238714EF00BFE1FD /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDWebImage.xcodeproj; path = SDWebImage/SDWebImage.xcodeproj; sourceTree = SOURCE_ROOT; };
+		5687CEB22387216300BFE1FD /* NewYorkSmall-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Regular.otf"; sourceTree = "<group>"; };
+		5687CEB32387216300BFE1FD /* NewYorkSmall-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Bold.otf"; sourceTree = "<group>"; };
 		568889FF210A2A9700F8BF04 /* QuoteTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteTableCell.xib; sourceTree = "<group>"; };
 		568AC010210773940026B451 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		56C9C5F52132EA980017295F /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				5660F661212FB4BD006793DC /* NotoSerif-Bold.ttf */,
+				5687CEB32387216300BFE1FD /* NewYorkSmall-Bold.otf */,
+				5687CEB22387216300BFE1FD /* NewYorkSmall-Regular.otf */,
 				5660F662212FB4BD006793DC /* NotoSerif-Regular.ttf */,
 				563842E52106BDBE0080FC8B /* quotes.json */,
 				568AC010210773940026B451 /* SwiftyJSON.swift */,
@@ -408,7 +414,9 @@
 				5660F664212FB4BD006793DC /* NotoSerif-Regular.ttf in Resources */,
 				56888A00210A2A9700F8BF04 /* QuoteTableCell.xib in Resources */,
 				563842B82106B8410080FC8B /* Assets.xcassets in Resources */,
+				5687CEB42387216300BFE1FD /* NewYorkSmall-Regular.otf in Resources */,
 				563842B62106B83F0080FC8B /* Main.storyboard in Resources */,
+				5687CEB52387216300BFE1FD /* NewYorkSmall-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
