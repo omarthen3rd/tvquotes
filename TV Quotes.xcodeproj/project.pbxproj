@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5601273A2151514400875AAB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560127392151514400875AAB /* Colors.swift */; };
 		560768572107B827004EF69B /* QuoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560768562107B827004EF69B /* QuoteListViewModel.swift */; };
 		561C2E8621A9B3E500D98957 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561C2E8521A9B3E500D98957 /* AVFoundation.framework */; };
 		563842B12106B83F0080FC8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563842B02106B83F0080FC8B /* AppDelegate.swift */; };
@@ -23,6 +22,8 @@
 		563842EC2106C1540080FC8B /* TVShowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563842EB2106C1540080FC8B /* TVShowViewModel.swift */; };
 		5660F663212FB4BD006793DC /* NotoSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5660F661212FB4BD006793DC /* NotoSerif-Bold.ttf */; };
 		5660F664212FB4BD006793DC /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5660F662212FB4BD006793DC /* NotoSerif-Regular.ttf */; };
+		5687CEAF238714F600BFE1FD /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5687CEAC238714EF00BFE1FD /* SDWebImage.framework */; };
+		5687CEB0238714F600BFE1FD /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5687CEAC238714EF00BFE1FD /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		56888A00210A2A9700F8BF04 /* QuoteTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568889FF210A2A9700F8BF04 /* QuoteTableCell.xib */; };
 		568AC011210773950026B451 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568AC010210773940026B451 /* SwiftyJSON.swift */; };
 		56C9C5F62132EA980017295F /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C9C5F52132EA980017295F /* VisualEffectView.swift */; };
@@ -45,10 +46,44 @@
 			remoteGlobalIDString = 563842AC2106B83F0080FC8B;
 			remoteInfo = "TV Quotes";
 		};
+		5687CEA9238714EF00BFE1FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5687CEA2238714EF00BFE1FD /* SDWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53761325155AD0D5005750A4;
+			remoteInfo = "SDWebImage static";
+		};
+		5687CEAB238714EF00BFE1FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5687CEA2238714EF00BFE1FD /* SDWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4A2CADFF1AB4BB5300B6BC39;
+			remoteInfo = SDWebImage;
+		};
+		5687CEAD238714EF00BFE1FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5687CEA2238714EF00BFE1FD /* SDWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 80B6DFEE2142B71600BCB334;
+			remoteInfo = SDWebImageMapKit;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5687CEB1238714F600BFE1FD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5687CEB0238714F600BFE1FD /* SDWebImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		560127392151514400875AAB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Resources/Colors.swift; sourceTree = "<group>"; };
 		560768562107B827004EF69B /* QuoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteListViewModel.swift; sourceTree = "<group>"; };
 		561C2E8521A9B3E500D98957 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		563842AD2106B83F0080FC8B /* TV Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TV Quotes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +105,7 @@
 		563842EB2106C1540080FC8B /* TVShowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowViewModel.swift; sourceTree = "<group>"; };
 		5660F661212FB4BD006793DC /* NotoSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Bold.ttf"; sourceTree = "<group>"; };
 		5660F662212FB4BD006793DC /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
+		5687CEA2238714EF00BFE1FD /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDWebImage.xcodeproj; path = SDWebImage/SDWebImage.xcodeproj; sourceTree = SOURCE_ROOT; };
 		568889FF210A2A9700F8BF04 /* QuoteTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteTableCell.xib; sourceTree = "<group>"; };
 		568AC010210773940026B451 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		56C9C5F52132EA980017295F /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
@@ -82,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5687CEAF238714F600BFE1FD /* SDWebImage.framework in Frameworks */,
 				561C2E8621A9B3E500D98957 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,12 +175,9 @@
 				563842B02106B83F0080FC8B /* AppDelegate.swift */,
 				563842E12106BA1C0080FC8B /* Models */,
 				563842DE2106B9A60080FC8B /* ViewModels */,
+				56ED4C7F2387101100E04FC0 /* Views */,
 				563842E42106BDA70080FC8B /* Resources */,
-				563842E72106BF270080FC8B /* TVShowListController.swift */,
-				56EAF49021080105000F7809 /* QuoteListController.swift */,
-				563842B22106B83F0080FC8B /* QuoteViewController.swift */,
-				568889FF210A2A9700F8BF04 /* QuoteTableCell.xib */,
-				560127392151514400875AAB /* Colors.swift */,
+				56ED4C802387105400E04FC0 /* Libraries */,
 				563842B42106B83F0080FC8B /* Main.storyboard */,
 				563842B72106B8410080FC8B /* Assets.xcassets */,
 				563842B92106B8410080FC8B /* LaunchScreen.storyboard */,
@@ -200,6 +234,35 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		5687CEA3238714EF00BFE1FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5687CEAA238714EF00BFE1FD /* libSDWebImage.a */,
+				5687CEAC238714EF00BFE1FD /* SDWebImage.framework */,
+				5687CEAE238714EF00BFE1FD /* SDWebImageMapKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56ED4C7F2387101100E04FC0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				568889FF210A2A9700F8BF04 /* QuoteTableCell.xib */,
+				563842E72106BF270080FC8B /* TVShowListController.swift */,
+				56EAF49021080105000F7809 /* QuoteListController.swift */,
+				563842B22106B83F0080FC8B /* QuoteViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		56ED4C802387105400E04FC0 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				5687CEA2238714EF00BFE1FD /* SDWebImage.xcodeproj */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,6 +274,7 @@
 				563842AA2106B83F0080FC8B /* Frameworks */,
 				563842AB2106B83F0080FC8B /* Resources */,
 				56DA01512141BD8B002F60BA /* ShellScript */,
+				5687CEB1238714F600BFE1FD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +358,12 @@
 			mainGroup = 563842A42106B83F0080FC8B;
 			productRefGroup = 563842AE2106B83F0080FC8B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5687CEA3238714EF00BFE1FD /* Products */;
+					ProjectRef = 5687CEA2238714EF00BFE1FD /* SDWebImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				563842AC2106B83F0080FC8B /* TV Quotes */,
@@ -302,6 +372,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5687CEAA238714EF00BFE1FD /* libSDWebImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDWebImage.a;
+			remoteRef = 5687CEA9238714EF00BFE1FD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5687CEAC238714EF00BFE1FD /* SDWebImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDWebImage.framework;
+			remoteRef = 5687CEAB238714EF00BFE1FD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5687CEAE238714EF00BFE1FD /* SDWebImageMapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDWebImageMapKit.framework;
+			remoteRef = 5687CEAD238714EF00BFE1FD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		563842AB2106B83F0080FC8B /* Resources */ = {
@@ -367,7 +461,6 @@
 				563842EA2106C10F0080FC8B /* TVShow.swift in Sources */,
 				568AC011210773950026B451 /* SwiftyJSON.swift in Sources */,
 				56C9C5F62132EA980017295F /* VisualEffectView.swift in Sources */,
-				5601273A2151514400875AAB /* Colors.swift in Sources */,
 				563842B32106B83F0080FC8B /* QuoteViewController.swift in Sources */,
 				563842E82106BF270080FC8B /* TVShowListController.swift in Sources */,
 				563842EC2106C1540080FC8B /* TVShowViewModel.swift in Sources */,
@@ -544,8 +637,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AEA87WCYYX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TV\\ Quotes/Libraries",
+				);
 				INFOPLIST_FILE = "TV Quotes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -564,8 +661,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AEA87WCYYX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TV\\ Quotes/Libraries",
+				);
 				INFOPLIST_FILE = "TV Quotes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

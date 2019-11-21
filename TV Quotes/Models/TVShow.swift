@@ -9,23 +9,16 @@
 import Foundation
 import UIKit
 
-public struct TVShow {
+public struct TVShow: Codable {
 
     var name: String
-    var image: UIImage
+    var image: String
     var quotes: [Quote]
 
-//    private enum CodingKeys: String, CodingKey {
-//        case name
-//        case image
-//        case quotes
-//    }
-//
-//    public init(from decoder: Decoder) throws {
-//        let values = try decoder.container(keyedBy: CodingKeys.self)
-//        name = try values.decode(String.self, forKey: .name)
-//        // image = try values.decode
-//        quotes = try values.decode([Quote].self, forKey: .quotes)
-//    }
+    private enum CodingKeys: String, CodingKey {
+        case name
+        case image
+        case quotes
+    }
 
 }

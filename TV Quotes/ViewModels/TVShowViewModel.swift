@@ -57,26 +57,21 @@ public final class TVShowViewModel {
 
     private func getRemoteQuotes() {
 
-        let urlPath = "https://tvquotes99.firebaseio.com/.json"
+        let urlPath = "https://tvquotes99.firebaseio.com/shows/.json"
         guard let url = URL(string: urlPath) else { return }
         fetchData(with: url) { (data, _, _) in
 
             guard let data = data else { return }
             do {
 
+                self.handleQuotesJSON(with: data, false)
                 let json = try JSON(data: data)
-                
-                // let latestVersion = json["currentVersion"].doubleValue
-                
+                                
                 if self.currentVersion == nil {
-                    // first launch
                     self.currentVersion = json["version"].doubleValue
                     self.userDefaults.set(self.currentVersion, forKey: self.propertyKeys.currentVersion)
                 }
                 
-                // self.currentVersion! < latestVersion && shouldUpdate
-                self.handleQuotesJSON(with: json, true)
-
             } catch {
                 print("caught remote error")
             }
@@ -88,51 +83,30 @@ public final class TVShowViewModel {
     func getLocallyStoredQuotes() {
 
         guard let storedQuotes = userDefaults.data(forKey: self.propertyKeys.quotes) else { return }
-        do {
-
-            let json = try JSON(data: storedQuotes)
-            handleQuotesJSON(with: json, false)
-
-        } catch {
-            print("caught error")
-        }
+        handleQuotesJSON(with: storedQuotes, false)
 
     }
 
-    func handleQuotesJSON(with: JSON, _ shouldUpdate: Bool) {
+    func handleQuotesJSON(with: Data, _ shouldUpdate: Bool) {
         
-        let json = with
+        let data = with
         var tvShows = [TVShow]()
         
-        // go inside shows
-        for show in json["shows"].arrayValue {
-            
-            // get showName (key) and quotes (of JSON type array)
-            for (showName, info):(String, JSON) in show {
-                
-                var showQuotes = [Quote]()
-                
-                // get quotes
-                for quote in info["quotes"].arrayValue {
-                    // quote is the json value of shows
-                    let newQuote = Quote(quoter: quote["quoter"].stringValue, quote: quote["quote"].stringValue)
-                    showQuotes.append(newQuote)
-                }
-                guard let imageURL = URL(string: info["image"].stringValue) else { return }
-                let showImage = self.getImage(with: imageURL)
-                
-                let newShow = TVShow(name: showName, image: showImage, quotes: showQuotes)
-                tvShows.append(newShow)
-                
-            }
-        }
-        
-        if shouldUpdate {
-            let quoterNames = json["names"].arrayValue.map({ $0.stringValue })
-            self.userDefaults.set(quoterNames, forKey: self.propertyKeys.names)
-            // TODO:
-            // use nskeyarchiver
-            // self.userDefaults.set(tvShows, forKey: self.propertyKeys.quotes)
+        do {
+            tvShows = try JSONDecoder().decode([TVShow].self, from: data)
+        } catch let DecodingError.dataCorrupted(context) {
+            print(context)
+        } catch let DecodingError.keyNotFound(key, context) {
+            print("Key '\(key)' not found:", context.debugDescription)
+            print("codingPath:", context.codingPath)
+        } catch let DecodingError.valueNotFound(value, context) {
+            print("Value '\(value)' not found:", context.debugDescription)
+            print("codingPath:", context.codingPath)
+        } catch let DecodingError.typeMismatch(type, context)  {
+            print("Type '\(type)' mismatch:", context.debugDescription)
+            print("codingPath:", context.codingPath)
+        } catch {
+            print("error: ", error)
         }
         
         self.shows = tvShows
