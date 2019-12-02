@@ -113,6 +113,7 @@
 		568889FF210A2A9700F8BF04 /* QuoteTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteTableCell.xib; sourceTree = "<group>"; };
 		568AC010210773940026B451 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		56C9C5F52132EA980017295F /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		56DCD78423899D030052B5BD /* TV Quotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TV Quotes.entitlements"; sourceTree = "<group>"; };
 		56EAF49021080105000F7809 /* QuoteListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteListController.swift; sourceTree = "<group>"; };
 		56FCDAA12150827E0087530B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +177,7 @@
 		563842AF2106B83F0080FC8B /* TV Quotes */ = {
 			isa = PBXGroup;
 			children = (
+				56DCD78423899D030052B5BD /* TV Quotes.entitlements */,
 				563842B02106B83F0080FC8B /* AppDelegate.swift */,
 				563842E12106BA1C0080FC8B /* Models */,
 				563842DE2106B9A60080FC8B /* ViewModels */,
@@ -643,7 +645,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "TV Quotes/TV Quotes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = AEA87WCYYX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -658,6 +662,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.omarabbasi.TV-Quotes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -667,7 +672,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "TV Quotes/TV Quotes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = AEA87WCYYX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -682,6 +689,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.omarabbasi.TV-Quotes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

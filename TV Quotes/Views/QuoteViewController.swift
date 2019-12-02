@@ -45,6 +45,14 @@ extension UITextView {
         contentInset.right = 20
 
     }
+    
+    func fitToContent(_ width: CGFloat) {
+        
+        let fittingSize = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
+        let size = sizeThatFits(fittingSize)
+        frame.size = CGSize(width: width, height: size.height)
+        
+    }
 
     func textExceedsBounds() -> Bool {
         let textHeight = self.contentSize.height
@@ -97,13 +105,32 @@ class QuoteViewController: UIViewController {
         } else {
             self.view.backgroundColor = UIColor.white
         }
+        
+        let quoteView = UIView()
+        quoteView.backgroundColor = .clear
 
         quoteTextView = UITextView()
         quoteTextView.attributedText = viewModel.getQuoteString()
         quoteTextView.isEditable = false
         quoteTextView.isSelectable = true
-        quoteTextView.backgroundColor = .clear
-    
+//        quoteTextView.isScrollEnabled = false
+//        if #available(iOS 13.0, *) {
+//            quoteTextView.backgroundColor = .secondarySystemFill
+//        } else {
+//            quoteTextView.backgroundColor = .clear
+//        }
+        
+//        quoteView.addSubview(quoteTextView)
+//
+//        quoteTextView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        quoteTextView.fitToContent(self.view.bounds.size.width - 50)
+//        quoteTextView.centerXAnchor.constraint(equalTo: quoteView.centerXAnchor).isActive = true
+//        quoteTextView.centerYAnchor.constraint(equalTo: quoteView.centerYAnchor).isActive = true
+//        quoteTextView.trailingAnchor.constraint(equalTo: quoteView.trailingAnchor, constant: -25).isActive = true
+//        quoteTextView.leadingAnchor.constraint(equalTo: quoteView.leadingAnchor, constant: 25).isActive = true
+//        quoteTextView.heightAnchor.constraint(equalToConstant: quoteTextView.frame.height).isActive = true
+        
         if #available(iOS 13.0, *) {
             quoteTextView.textColor = UIColor.label
         } else {
@@ -133,7 +160,7 @@ class QuoteViewController: UIViewController {
 
         shuffleButton.addTarget(self, action: #selector(self.random(_:)), for: UIControl.Event.touchUpInside)
 
-        let stackView = UIStackView(arrangedSubviews: [browseButton, favouriteButton, shuffleButton])
+        let stackView = UIStackView(arrangedSubviews: [shuffleButton])
         stackView.alignment = .fill
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -150,7 +177,7 @@ class QuoteViewController: UIViewController {
         let safeArea = view.safeAreaLayoutGuide
         mainVerticalStack.translatesAutoresizingMaskIntoConstraints = false
         mainVerticalStack.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0).isActive = true
-        mainVerticalStack.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 0).isActive = true
+        mainVerticalStack.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -10).isActive = true
         mainVerticalStack.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: 0).isActive = true
         mainVerticalStack.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 0).isActive = true
 
