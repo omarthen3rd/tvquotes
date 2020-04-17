@@ -106,35 +106,16 @@ class QuoteViewController: UIViewController {
             self.view.backgroundColor = UIColor.white
         }
         
-        let quoteView = UIView()
-        quoteView.backgroundColor = .clear
-
         quoteTextView = UITextView()
         quoteTextView.attributedText = viewModel.getQuoteString()
         quoteTextView.isEditable = false
         quoteTextView.isSelectable = true
-//        quoteTextView.isScrollEnabled = false
-//        if #available(iOS 13.0, *) {
-//            quoteTextView.backgroundColor = .secondarySystemFill
-//        } else {
-//            quoteTextView.backgroundColor = .clear
-//        }
-        
-//        quoteView.addSubview(quoteTextView)
-//
-//        quoteTextView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        quoteTextView.fitToContent(self.view.bounds.size.width - 50)
-//        quoteTextView.centerXAnchor.constraint(equalTo: quoteView.centerXAnchor).isActive = true
-//        quoteTextView.centerYAnchor.constraint(equalTo: quoteView.centerYAnchor).isActive = true
-//        quoteTextView.trailingAnchor.constraint(equalTo: quoteView.trailingAnchor, constant: -25).isActive = true
-//        quoteTextView.leadingAnchor.constraint(equalTo: quoteView.leadingAnchor, constant: 25).isActive = true
-//        quoteTextView.heightAnchor.constraint(equalToConstant: quoteTextView.frame.height).isActive = true
+        quoteTextView.backgroundColor = .clear
         
         if #available(iOS 13.0, *) {
             quoteTextView.textColor = UIColor.label
         } else {
-            quoteTextView.textColor = UIColor.black
+            quoteTextView.textColor = UIColor.white
         }
 
         DispatchQueue.main.async {
