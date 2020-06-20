@@ -75,7 +75,6 @@ extension UILabel {
 class QuoteViewController: UIViewController {
 
     public var viewModel: QuoteViewModel!
-    var quoteTextView = UITextView()
     var quoteLabel = UILabel()
     var quoterLabel = UILabel()
     
@@ -107,21 +106,12 @@ class QuoteViewController: UIViewController {
             self.view.backgroundColor = UIColor.white
         }
         
-        quoteTextView = UITextView()
-        quoteTextView.attributedText = viewModel.getQuoteString()
-        quoteTextView.isEditable = false
-        quoteTextView.isSelectable = true
-        quoteTextView.backgroundColor = .clear
+        quoteLabel = UILabel()
+        quoteLabel.attributedText = viewModel.getQuoteString()
+        quoteLabel.sizeToFit()
+        quoteLabel.numberOfLines = 0
         
-        if #available(iOS 13.0, *) {
-            quoteTextView.textColor = UIColor.label
-        } else {
-            quoteTextView.textColor = UIColor.white
-        }
-        
-        DispatchQueue.main.async {
-            self.quoteTextView.centerVertically()
-        }
+        quoteLabel.textColor = UIColor.label
 
         quoterLabel = UILabel()
         quoterLabel.attributedText = viewModel.getQuoterString()
@@ -129,16 +119,10 @@ class QuoteViewController: UIViewController {
         quoterLabel.textAlignment = .center
 
         // create the 3 buttons
-        if #available(iOS 13.0, *) {
-            // use sf symbols
-            browseButton = createButton(with: "list.dash")
-            favouriteButton = createButton(with: "heart")
-            shuffleButton = createButton(with: "shuffle")
-        } else {
-            browseButton = createButton(with: "browse")
-            favouriteButton = createButton(with: "happyHeart")
-            shuffleButton = createButton(with: "shuffle")
-        }
+        // use sf symbols
+        browseButton = createButton(with: "list.dash")
+        favouriteButton = createButton(with: "heart")
+        shuffleButton = createButton(with: "shuffle")
 
         shuffleButton.addTarget(self, action: #selector(self.random(_:)), for: UIControl.Event.touchUpInside)
 
@@ -148,7 +132,7 @@ class QuoteViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.spacing = 20
         
-        let mainVerticalStack = UIStackView(arrangedSubviews: [quoteTextView, quoterLabel, stackView])
+        let mainVerticalStack = UIStackView(arrangedSubviews: [quoteLabel, quoterLabel, stackView])
         mainVerticalStack.alignment = .fill
         mainVerticalStack.axis = .vertical
         mainVerticalStack.distribution = .fill
@@ -160,14 +144,10 @@ class QuoteViewController: UIViewController {
         mainVerticalStack.translatesAutoresizingMaskIntoConstraints = false
         mainVerticalStack.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0).isActive = true
         mainVerticalStack.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -10).isActive = true
-        mainVerticalStack.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: 0).isActive = true
-        mainVerticalStack.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 0).isActive = true
+        mainVerticalStack.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20).isActive = true
+        mainVerticalStack.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20).isActive = true
 
         stackView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        DispatchQueue.main.async {
-            self.quoteTextView.centerVertically()
-        }
 
     }
 
@@ -200,16 +180,8 @@ class QuoteViewController: UIViewController {
         } else {
             shuffleButton.setImage(#imageLiteral(resourceName: "next").withRenderingMode(.alwaysTemplate), for: [])
         }
-        self.quoteTextView.attributedText = self.viewModel.getQuoteString(true)
-        if #available(iOS 13.0, *) {
-            quoteTextView.textColor = UIColor.label
-        } else {
-            quoteTextView.textColor = UIColor.black
-        }
+        self.quoteLabel.attributedText = self.viewModel.getQuoteString(true)
         self.quoterLabel.attributedText = self.viewModel.getQuoterString(true)
-        DispatchQueue.main.async {
-            self.quoteTextView.centerVertically()
-        }
 
     }
 
