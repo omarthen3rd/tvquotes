@@ -154,10 +154,7 @@ class QuoteListController: UITableViewController, UIViewControllerPreviewingDele
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         guard let newVC = viewControllerToCommit as? QuoteViewController else { return }
-        newVC.quoteTextView.centerVertically()
-        if #available(iOS 11.0, *) {
-            newVC.navigationController?.navigationBar.prefersLargeTitles = false
-        }
+        newVC.navigationController?.navigationBar.prefersLargeTitles = false
         show(newVC, sender: self)
     }
 
