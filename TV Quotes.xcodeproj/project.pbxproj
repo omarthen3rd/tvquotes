@@ -16,12 +16,9 @@
 		563842BB2106B8410080FC8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 563842B92106B8410080FC8B /* LaunchScreen.storyboard */; };
 		563842E02106B9C20080FC8B /* QuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563842DF2106B9C20080FC8B /* QuoteViewModel.swift */; };
 		563842E32106BA270080FC8B /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563842E22106BA270080FC8B /* Quote.swift */; };
-		563842E62106BDBE0080FC8B /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 563842E52106BDBE0080FC8B /* quotes.json */; };
 		563842E82106BF270080FC8B /* TVShowListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563842E72106BF270080FC8B /* TVShowListController.swift */; };
 		563842EA2106C10F0080FC8B /* TVShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563842E92106C10F0080FC8B /* TVShow.swift */; };
 		563842EC2106C1540080FC8B /* TVShowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563842EB2106C1540080FC8B /* TVShowViewModel.swift */; };
-		5660F663212FB4BD006793DC /* NotoSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5660F661212FB4BD006793DC /* NotoSerif-Bold.ttf */; };
-		5660F664212FB4BD006793DC /* NotoSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5660F662212FB4BD006793DC /* NotoSerif-Regular.ttf */; };
 		5687CEB42387216300BFE1FD /* NewYorkSmall-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5687CEB22387216300BFE1FD /* NewYorkSmall-Regular.otf */; };
 		5687CEB52387216300BFE1FD /* NewYorkSmall-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5687CEB32387216300BFE1FD /* NewYorkSmall-Bold.otf */; };
 		56888A00210A2A9700F8BF04 /* QuoteTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568889FF210A2A9700F8BF04 /* QuoteTableCell.xib */; };
@@ -85,12 +82,9 @@
 		563842D22106B8410080FC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		563842DF2106B9C20080FC8B /* QuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewModel.swift; sourceTree = "<group>"; };
 		563842E22106BA270080FC8B /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
-		563842E52106BDBE0080FC8B /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 		563842E72106BF270080FC8B /* TVShowListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowListController.swift; sourceTree = "<group>"; };
 		563842E92106C10F0080FC8B /* TVShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShow.swift; sourceTree = "<group>"; };
 		563842EB2106C1540080FC8B /* TVShowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowViewModel.swift; sourceTree = "<group>"; };
-		5660F661212FB4BD006793DC /* NotoSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Bold.ttf"; sourceTree = "<group>"; };
-		5660F662212FB4BD006793DC /* NotoSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-Regular.ttf"; sourceTree = "<group>"; };
 		567D04F323996B8C00F674A5 /* SDWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDWebImage.xcodeproj; path = SDWebImage/SDWebImage.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5687CEB22387216300BFE1FD /* NewYorkSmall-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Regular.otf"; sourceTree = "<group>"; };
 		5687CEB32387216300BFE1FD /* NewYorkSmall-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Bold.otf"; sourceTree = "<group>"; };
@@ -213,11 +207,8 @@
 		563842E42106BDA70080FC8B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5660F661212FB4BD006793DC /* NotoSerif-Bold.ttf */,
 				5687CEB32387216300BFE1FD /* NewYorkSmall-Bold.otf */,
 				5687CEB22387216300BFE1FD /* NewYorkSmall-Regular.otf */,
-				5660F662212FB4BD006793DC /* NotoSerif-Regular.ttf */,
-				563842E52106BDBE0080FC8B /* quotes.json */,
 				568AC010210773940026B451 /* SwiftyJSON.swift */,
 				56C9C5F52132EA980017295F /* VisualEffectView.swift */,
 				56FCDAA12150827E0087530B /* Reachability.swift */,
@@ -398,10 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				563842E62106BDBE0080FC8B /* quotes.json in Resources */,
-				5660F663212FB4BD006793DC /* NotoSerif-Bold.ttf in Resources */,
 				563842BB2106B8410080FC8B /* LaunchScreen.storyboard in Resources */,
-				5660F664212FB4BD006793DC /* NotoSerif-Regular.ttf in Resources */,
 				56888A00210A2A9700F8BF04 /* QuoteTableCell.xib in Resources */,
 				563842B82106B8410080FC8B /* Assets.xcassets in Resources */,
 				5687CEB42387216300BFE1FD /* NewYorkSmall-Regular.otf in Resources */,
@@ -641,7 +629,7 @@
 					"$(PROJECT_DIR)/TV\\ Quotes/Libraries",
 				);
 				INFOPLIST_FILE = "TV Quotes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -667,7 +655,7 @@
 					"$(PROJECT_DIR)/TV\\ Quotes/Libraries",
 				);
 				INFOPLIST_FILE = "TV Quotes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
