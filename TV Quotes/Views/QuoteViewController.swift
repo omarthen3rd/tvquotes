@@ -76,6 +76,7 @@ class QuoteViewController: UIViewController {
 
     public var viewModel: QuoteViewModel!
     var quoteTextView = UITextView()
+    var quoteLabel = UILabel()
     var quoterLabel = UILabel()
     
     var browseButton = UIButton()
@@ -117,7 +118,7 @@ class QuoteViewController: UIViewController {
         } else {
             quoteTextView.textColor = UIColor.white
         }
-
+        
         DispatchQueue.main.async {
             self.quoteTextView.centerVertically()
         }
@@ -163,6 +164,10 @@ class QuoteViewController: UIViewController {
         mainVerticalStack.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 0).isActive = true
 
         stackView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        DispatchQueue.main.async {
+            self.quoteTextView.centerVertically()
+        }
 
     }
 
@@ -171,7 +176,7 @@ class QuoteViewController: UIViewController {
         var image = UIImage(named: with)
         
         if #available(iOS 13.0, *) {
-            let symbolConfig = UIImage.SymbolConfiguration(pointSize: 25, weight: .medium, scale: .medium)
+            let symbolConfig = UIImage.SymbolConfiguration(pointSize: 22, weight: .medium, scale: .medium)
             image = UIImage(systemName: with, withConfiguration: symbolConfig)!
         }
         

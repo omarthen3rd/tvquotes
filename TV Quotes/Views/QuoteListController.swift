@@ -89,7 +89,7 @@ class QuoteListController: UITableViewController, UIViewControllerPreviewingDele
         if let cell = tableView.dequeueReusableCell(withIdentifier: "quoteCell", for: indexPath) as? QuoteTableCell {
 
             let quote = viewModel.getQuotes()[indexPath.row]
-            cell.selectionStyle = .gray
+            cell.selectionStyle = .default
             cell.quoteLabel?.text = quote.quote
             cell.detailsLabel?.text = quote.quoter
 
@@ -103,9 +103,11 @@ class QuoteListController: UITableViewController, UIViewControllerPreviewingDele
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let quoteViewModel = viewModel.quoteViewModelForQuoteAtIndexPath(indexPath)
         let quoteViewController = QuoteViewController(viewModel: quoteViewModel)
-        self.navigationController?.pushViewController(quoteViewController, animated: true)
+        self.navigationController?.present(quoteViewController, animated: true, completion: nil)
 
     }
 
